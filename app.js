@@ -32,6 +32,12 @@ const displayElement = document.getElementById("display")
 let imageSeenIndex = 0
 
 let imageElem = document.createElement("img")
+
+function ToStart() {
+    imageSeen(myImages[imageSeenIndex])
+    creationOfThumbnails()
+}
+
 // I create a function to display the small images in div with id=thumb-container.
 // I want to go through each element of the array (forEach or for of) and create a corresponding image in 
 //the HTML file (imageElem) with properties from the element in the array (myImage)
@@ -109,16 +115,17 @@ function chooseNextImage(index) {
     
 }
 
+window.onload = ToStart
 
 
 function chooseWithKeyboard(event) {
     if (event.key === 'ArrowRight') {
-        chooseNextImage(1);
+        chooseNextImage(1)
     } else if (event.key === 'ArrowLeft') {
-        chooseNextImage(-1);
+        chooseNextImage(-1)
     }
 }
 
 
 
-window.addEventListener('keydown', chooseWithKeyboard);
+window.addEventListener('keydown', chooseWithKeyboard)

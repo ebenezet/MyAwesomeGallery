@@ -10,7 +10,7 @@ body {
     position:absolute;
     justify-content: center;
     align-content: center;
-    width: 600px;
+    width: auto;
     height: 100px;
     border: 2px solid black;
     left:45%;
@@ -35,12 +35,18 @@ body {
         flex-wrap: wrap;
         justify-content: center;
         overflow: scroll; 
-        width: 400px;
+        width: 300px;
         height: 100px; 
         transform: translateX(-50%);
         overflow:scroll;
     }
-    }
+    
+#display img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+}
 
 #display img {
     width: 100%;
