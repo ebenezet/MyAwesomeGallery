@@ -10,16 +10,21 @@ body {
     position:absolute;
     justify-content: center;
     align-content: center;
-    width: 490px;
+    width: 600px;
     height: 100px;
     border: 2px solid black;
     left:45%;
     margin:30px;
     transform: translateX(-50%);
     overflow:scroll;
-  
+    z-index: 100;
 } 
 
+.thumbsmall {
+    width: 40px;
+    height: 50px;
+    cursor: pointer;
+}
 
 
 @media  (390px <= width <= 844px) {
@@ -29,11 +34,11 @@ body {
         flex-direction: column;
         flex-wrap: wrap;
         justify-content: center;
-        max-width: fit-content;
         overflow: scroll; 
-        width: 10px;
+        width: 400px;
         height: 100px; 
-
+        transform: translateX(-50%);
+        overflow:scroll;
     }
     }
 
