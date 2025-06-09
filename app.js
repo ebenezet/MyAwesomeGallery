@@ -29,6 +29,8 @@ let thumbContainer = document.getElementById("thumb-container")
 //I want tohave to access to the div with id=display. This is where the big image will go
 const displayElement = document.getElementById("display")
 
+
+
 let imageSeenIndex = 0
 
 let imageElem = document.createElement("img")
@@ -53,14 +55,14 @@ function creationOfThumbnails() {
         thumbContainer.appendChild(imageElem)
        imageElem.addEventListener('click', function () {
             imageSeen(myImage)
- 
+
         })
         imageElem.addEventListener("keydown", function(event){
             if (event.key == 'Enter') imageSeen(myImage)
         })
     }
  }
-creationOfThumbnails()
+
 
 
 function updateScrollBar(imageSeen) {
@@ -83,19 +85,20 @@ function updateScrollBar(imageSeen) {
 }
 
 
-
 function imageSeen(myImage){
     let biggerImage = displayElement.firstchild
     if(!biggerImage) {
     biggerImage = document.createElement("img")
+    displayElement.innerHTML = null
     displayElement.appendChild(biggerImage)
+
     }
     biggerImage.src = myImage.src
     biggerImage.scr = myImage.alt
     biggerImage.class = "thumbcontsmall"
     biggerImage.tabindex = "0"
     updateScrollBar(myImage)
-
+    
 }
 
 
@@ -112,7 +115,7 @@ function chooseNextImage(index) {
     
     if (imageSeenIndex < 0)  imageSeenIndex = myImages.length -1
     imageSeen(myImages[imageSeenIndex])
-    
+    displayElement.innerHTML = null
 }
 
 window.onload = ToStart
